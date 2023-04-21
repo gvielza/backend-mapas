@@ -1,23 +1,19 @@
 {
-  "name": "backend",
+  "name": "@accessMap/monorepo",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "workspaces": [
+    "./apps/*",
+    "./common/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "be": "npm run dev -w @accessMap/maps-server", 
+    "fe": "npm run dev -w @accessMap/web-access-map", 
+    "fe:build": "npm run build -w @accessMap/web-access-map", 
+    "fe:preview": "npm run build -w @accessMap/web-access-map", 
+    "prepare": "husky install"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.4",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+  "devDependencies": {
+    "husky": "8.0.3"
   }
 }
