@@ -1,4 +1,3 @@
-const mongoose = require('mongoose')
 const express = require('express')
 const User = require('../models/user')
 
@@ -12,7 +11,7 @@ router.post('/', (req, res) => {
     lastname,
     email,
     password,
-    disability,
+    disability
   })
   newUser.save()
   try {

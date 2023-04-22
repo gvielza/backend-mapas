@@ -1,5 +1,5 @@
 {
-  "name": "@accessMap/monorepo",
+  "name": "@accessmap/monorepo",
   "private": true,
   "version": "1.0.0",
   "workspaces": [
@@ -7,13 +7,18 @@
     "./common/*"
   ],
   "scripts": {
-    "be": "npm run dev -w @accessMap/maps-server", 
-    "fe": "npm run dev -w @accessMap/web-access-map", 
-    "fe:build": "npm run build -w @accessMap/web-access-map", 
-    "fe:preview": "npm run build -w @accessMap/web-access-map", 
-    "prepare": "husky install"
+    "be": "npm run dev -w @accessmap/maps-server",
+    "fe": "npm run dev -w @accessmap/web-access-map",
+    "fe:build": "npm run build -w @accessmap/web-access-map",
+    "fe:preview": "npm run build -w @accessmap/web-access-map",
+    "prepare": "husky install",
+    "lint": "standard"
   },
   "devDependencies": {
-    "husky": "8.0.3"
+    "husky": "8.0.3",
+    "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
